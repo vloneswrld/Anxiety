@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Anxiety - For Ameer 💙</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+  body {
+    margin: 0;
+    height: 100vh;
+    background: #c6f0e1; /* soft teal */
+    font-family: 'Comfortaa', cursive, sans-serif;
+    color: #225c4b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  .container {
+    max-width: 520px;
+    background: rgba(255 255 255 / 0.9);
+    padding: 30px 25px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(34,92,75,0.3);
+    position: relative;
+    z-index: 2;
+  }
+  h1 {
+    margin-bottom: 15px;
+    font-weight: 700;
+    font-size: 2.3rem;
+  }
+  p {
+    font-size: 1.15rem;
+    line-height: 1.5;
+    margin-bottom: 25px;
+  }
+  button {
+    background-color: #3a7d65;
+    border: none;
+    color: white;
+    padding: 13px 30px;
+    font-size: 1.1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    user-select: none;
+  }
+  button:hover {
+    background-color: #2b5c46;
+  }
+
+  /* Breathing circle */
+  .breath-circle {
+    margin: 0 auto 20px auto;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: #7fd4b4;
+    box-shadow: 0 0 20px #7fd4b4;
+    animation: pulse 4s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 0.7;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 1;
+    }
+  }
+
+  /* Calm message & emojis */
+  #calmContainer {
+    margin-top: 20px;
+    font-size: 1.25rem;
+    color: #225c4b;
+    display: none;
+    user-select: none;
+  }
+  #calmEmojis {
+    font-size: 2.8rem;
+    margin-top: 12px;
+  }
+</style>
+</head>
+<body>
+
+<div class="container" id="content">
+  <h1>Hey love,</h1>
+  <div class="breath-circle" aria-hidden="true"></div>
+  <p id="message">
+    Hey love, I know sometimes your mind races and your chest feels tight. Remember, it’s okay to pause and breathe — you don’t have to carry it all at once. I’m right here with you, sending you calm and strength. Let’s take a deep breath together. You’re safe, you’re loved, and you’re never alone in this. Every breath is a step toward peace, and I believe in you so much. Click the button whenever you need to find your calm — I’m always by your side 💙🌿
+  </p>
+  <button id="calmBtn">Take a deep breath with me</button>
+
+  <div id="calmContainer" aria-live="polite" role="alert">
+    <div id="calmMessage">Breathe in... Breathe out... You’re doing amazing 🌿💙🧘‍♂️</div>
+  </div>
+</div>
+
+<script>
+  const calmBtn = document.getElementById('calmBtn');
+  const calmContainer = document.getElementById('calmContainer');
+
+  calmBtn.addEventListener('click', () => {
+    calmContainer.style.display = 'block';
+    calmBtn.disabled = true;
+    calmBtn.style.cursor = 'default';
+    calmBtn.style.backgroundColor = '#66b092';
+  });
+</script>
+
+</body>
+</html>
